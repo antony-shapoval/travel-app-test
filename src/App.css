@@ -95,3 +95,14 @@ body {
 .empty-icon {
   font-size: 36px;
 }
+
+.results {
+  margin-top: 32px;
+}
+
+.results-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 16px;
+}
