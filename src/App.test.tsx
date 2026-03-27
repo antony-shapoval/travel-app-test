@@ -2,8 +2,9 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders search form', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByText('Пошук турів')).toBeInTheDocument();
+  expect(screen.getByPlaceholderText('Країна, місто або готель')).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: /знайти/i })).toBeInTheDocument();
 });
