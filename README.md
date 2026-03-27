@@ -1,25 +1,25 @@
 # Travel App
 
-Клієнтський застосунок для пошуку турів.
+A client-side tour search application.
 
-## Запуск
+## Getting Started
 
-**Вимоги:** Node.js 18+, npm 9+
+**Requirements:** Node.js 18+, npm 9+
 
 ```bash
 npm install
 npm start
 ```
 
-Відкрийте [http://localhost:3000](http://localhost:3000) у браузері.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Тести
+### Tests
 
 ```bash
 npm test
 ```
 
-### Продакшн-збірка
+### Production Build
 
 ```bash
 npm run build
@@ -27,28 +27,28 @@ npm run build
 
 ---
 
-## Про проект
+## About
 
-Застосунок дозволяє знайти тури за напрямком (країна, місто або готель) і переглянути результати у вигляді карток, відсортованих за ціною.
+Search for tours by destination (country, city, or hotel) and browse results as cards sorted by price.
 
-### Архітектура
+### Architecture
 
-Проект побудований на 4-шаровій архітектурі:
+The project follows a 4-layer architecture:
 
 ```
 src/
-├── models/          # TypeScript-типи та селектори (buildTours)
-├── services/        # Бізнес-логіка: polling, кеш, geo
-├── hooks/           # Тонкі React-обгортки над сервісами
+├── models/          # TypeScript types and selectors (buildTours)
+├── services/        # Business logic: polling, cache, geo
+├── hooks/           # Thin React wrappers over services
 └── components/
     ├── primitives/  # Input, Button, Popover
     ├── composed/    # Combobox = Popover + Input
     └── features/    # SearchForm, TourCard, TourList
 ```
 
-### Стек
+### Stack
 
 - React 19, TypeScript
-- [@floating-ui/react](https://floating-ui.com/) — позиціонування Popover
-- CSS Modules — ізольовані стилі без UI-бібліотек
-- Jest + Testing Library — 21 тест
+- [@floating-ui/react](https://floating-ui.com/) — Popover positioning
+- CSS Modules — scoped styles, no UI libraries
+- Jest + Testing Library — 21 tests
