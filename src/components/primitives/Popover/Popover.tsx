@@ -37,7 +37,12 @@ export const Popover: React.FC<PopoverProps> = ({ open, anchorRef, children }) =
 
   return (
     <FloatingPortal>
-      <div ref={refs.setFloating} style={floatingStyles} className={styles.popover}>
+      <div
+        ref={refs.setFloating}
+        style={floatingStyles}
+        className={styles.popover}
+        onMouseDown={(e) => e.stopPropagation()}
+      >
         {children}
       </div>
     </FloatingPortal>

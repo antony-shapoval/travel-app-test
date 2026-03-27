@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import { search } from '../services/searchService';
-import type { PricesMap, SearchState, SelectedDestination } from '../models/types';
+import type { SearchState, SelectedDestination } from '../models/types';
 
 export function useSearch() {
   const [state, setState] = useState<SearchState>({ status: 'idle' });

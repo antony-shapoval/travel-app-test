@@ -69,14 +69,3 @@ export async function search(countryId: string): Promise<PricesMap> {
 
   return poll(token, waitUntil, 0, controller.signal);
 }
-
-export function cancelSearch(): void {
-  if (activeAbortController) {
-    activeAbortController.abort();
-    activeAbortController = null;
-  }
-  if (activeToken) {
-    stopSearchPrices(activeToken).catch(() => {});
-    activeToken = null;
-  }
-}
