@@ -36,6 +36,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({ onSearch, loading }) => 
   const [inputValue, setInputValue] = useState('');
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState<SelectedDestination | null>(null);
+  const [lastSearchedId, setLastSearchedId] = useState<string | number | null>(null);
 
   const { countries, load: loadCountries } = useCountries();
   const isTyping = inputValue.length >= 2;
@@ -93,6 +94,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({ onSearch, loading }) => 
 
   const handleSubmit = () => {
     if (!selected) return;
+    setLastSearchedId(selected.id);
     onSearch(selected);
   };
 
@@ -117,7 +119,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({ onSearch, loading }) => 
       </div>
       <Button
         type="button"
-        disabled={!selected || loading}
+        disabled={!selected || (loading && selected.id === lastSearchedId)}
         onClick={handleSubmit}
       >
         {loading ? 'Пошук...' : 'Знайти'}
