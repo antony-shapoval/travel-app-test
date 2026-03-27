@@ -1,24 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
+import { SearchForm } from './components/features/SearchForm/SearchForm';
+import type { SelectedDestination } from './models/types';
 import './App.css';
 
 function App() {
+  const handleSearch = (destination: SelectedDestination) => {
+    console.log('search', destination);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app">
+      <header className="app-header">
+        <h1 className="app-title">Пошук турів</h1>
       </header>
+      <main className="app-main">
+        <SearchForm onSearch={handleSearch} loading={false} />
+      </main>
     </div>
   );
 }
