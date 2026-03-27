@@ -2,6 +2,8 @@
 
 A client-side tour search application.
 
+**Live demo:** https://travel-app-test-mu.vercel.app/
+
 ## Getting Started
 
 **Requirements:** Node.js 18+, npm 9+
